@@ -17,9 +17,12 @@ The wiring:
 ![J1 GPIO P3](https://user-images.githubusercontent.com/80706499/162152147-dae0eb5f-651e-4fd1-a4cd-8a8abf5f6cbb.jpg)
 - J1 - 4 (5v) to Wemos 5V
 - J1 - 6 (Gnd) to Wemos Gnd
-- J1 - 3 (GPIO12) to Wemos D2
-- Optional: reset. , J1 - 5 (GPIO3) to Wemos Rst. Which can be used to reset the ESP from the PI commandline
+- J1 - 3 (GPIO2) to Wemos D2
+- Optional: reset. , J1 - 5 (GPIO3) to Wemos Rst. Which can be used to reset the ESP from the PI commandline. But sofar I have not succeeded in getting that working.
 
+## Custom modbus class
+The energy data-fetch code is of course very much dependent on how  the (local) PV datalogger works. That is why Energy.ino is a class, the init & get nmethods must be adapted to what the logger (or remote site) can provide. Mine is a wattsonic, but others (such as Growatt shinelan) require a completely different data fetch approach.
+Consult your PV solution's manuals to find out what to do.
 
 That's all, the sketch is in the Src. Feel free to copy and use, have fun!
 
